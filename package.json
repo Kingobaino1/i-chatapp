@@ -1,0 +1,34 @@
+{
+  "name": "i-chatapp",
+  "version": "1.0.0",
+  "description": "Server that holds i-chat app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kingobaino1/i-chatapp.git"
+  },
+  "author": "Kingsley Ibeh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kingobaino1/i-chatapp/issues"
+  },
+  "homepage": "https://github.com/Kingobaino1/i-chatapp#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.4.1",
+    "socket.io": "^4.5.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.6",
+    "@babel/node": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "nodemon": "^2.0.18"
+  }
+}
