@@ -8,7 +8,7 @@ import socket from 'socket.io';
 
 
 const app = express();
-const PORT = 4000 || process.env.PORT;
+const PORT = 3000 || process.env.PORT;
 const databaseString = process.env.DATABASE_URL
 
 mongoose.connect(databaseString, {
@@ -20,8 +20,8 @@ const database = mongoose.connection;
 database.on('error', (error) => console.log(error));
 database.once('connected', () => console.log('Database connected successfully'));
 
-app.use(cors());
 app.use(express.json());
+app.use(cors());
 app.use('/api/auth', userRouter);
 app.use('/api/messages', messageRoutes);
 
@@ -33,6 +33,7 @@ const io = socket(server, {
   cors: {
     origin: 'https://ki-chat-app.netlify.app',
     credentials: true,
+     "Access-Control-Allow-Origin": "*"
   }
 })
 
