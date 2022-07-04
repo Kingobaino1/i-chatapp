@@ -8,7 +8,7 @@ import socket from 'socket.io';
 
 
 const app = express();
-const PORT = 4000 || process.env.PORT;
+const PORT = process.env.PORT || 8000;
 const databaseString = process.env.DATABASE_URL
 
 mongoose.connect(databaseString, {
