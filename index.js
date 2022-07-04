@@ -21,7 +21,7 @@ database.on('error', (error) => console.log(error));
 database.once('connected', () => console.log('Database connected successfully'));
 
 app.use(express.json());
-app.use(cors({ origin: true }));
+app.use(cors());
 // app.use(function (request, response, next) {
 //   response.header("Access-Control-Allow-Origin", "*");
 //   response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -36,9 +36,9 @@ const server = app.listen(PORT, () => {
 
 const io = socket(server, {
   cors: {
-    origin: 'https://ki-chat-app.netlify.app',
-    credentials: true,
-     "Access-Control-Allow-Origin": "*"
+    origin: '*',
+    // credentials: true,
+    //  "Access-Control-Allow-Origin": "*"
   }
 })
 
