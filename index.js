@@ -2,10 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import 'dotenv/config';
 import mongoose from 'mongoose';
-import userRouter from './route/userRoutes';
-import messageRoutes from './route/messagesRoute';
-import socket from 'socket.io';
-
+import userRouter from './route/userRoutes.js';
+import messageRoutes from './route/messagesRoute.js';
+import { Server } from 'socket.io';
 
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -37,7 +36,7 @@ const server = app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-const io = socket(server, {
+const io = new Server(server, {
   cors: {
     origin: '*',
     // credentials: true,

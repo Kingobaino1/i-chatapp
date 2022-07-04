@@ -1,6 +1,7 @@
 {
   "name": "i-chatapp",
   "version": "1.0.0",
+  "type": "module",
   "description": "Server that holds i-chat app",
   "main": "index.js",
   "scripts": {
